@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+    <script>
+        function showRangeVal(){
+            let rgObj=document.getElementById("rgGPA");
+            let spObj=document.getElementById("rgGPAval");
+            spObj.innerHTML=rgObj.value;
+        }
+    </script>
+</head>
+<body>
+<!--<label>-->
+<!--    <input type="text">-->
+<!--</label>-->
+
+
+<form action="pp.php" method="post">
+    <fieldset>
+        <legend>personal information</legend>
+        <table>
+            <tr>
+                <td> <label for="id1"> student name:</label></td>
+                <td>   <input type="text" pattern="[A-z]+" name="" id="id1" size="30" maxlength="4" value="rama" ></td>
+            </tr>
+
+            <tr>
+                <td><label for="id2"> student password:</label></td>
+                <td>   <input type="password" name="" id="id2"></td>
+            </tr>
+
+            <tr>
+                <td> <label for="id3"> student address:</label></td>
+                <td>   <input type="text" name="" id="id3" ></td>
+            </tr>
+
+            <tr>
+                <td>Gender:</td>
+
+                <td>
+                    <input type="radio" value="male" name="gender">
+                    <label>male</label>
+
+                    <input type="radio" value="female" name="gender">
+                    <label>female</label>
+                </td>
+
+
+            </tr>
+            <tr>
+                <td> select city: </td>
+                <td>
+                    <select name="selzcity" id="city" >\
+                        <optgroup label="west bank">
+                            <option value="1">nablus</option>
+                            <option value="2">ramallah</option>
+                            <option value="4">jenin> </option>
+                        </optgroup>
+
+                        <optgroup label="inside">
+                            <option value="3">alQudus</option>
+                        </optgroup>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td> BirthDate: </td>
+                <td><input type="date"  name="bd" id="bd"></td>
+            </tr>
+            <tr>
+                <td> email: </td>
+                <td><input placeholder="email@company.com" type="email"  name="em" id="em"></td>
+            </tr>
+
+            <tr>
+                <td> <label for="id4"> student year:</label></td>
+                <td>   <input type="number" name="" id="id4" min="3" max="8" step="2"></td>
+            </tr>
+
+            <tr>
+                <td> photo:</td>
+                <td> <input type="file" accept="image/*" id="img" name="imgeFile"></td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend>general information</legend>
+    <table>
+
+        <tr>
+            <td> <label > faverot travel methode:</label></td>
+
+            <td>
+                <input type="checkbox" checked>
+                <label>bike</label>
+
+                <input type="checkbox" >
+                <label>car </label>
+
+            </td>
+
+        </tr>
+
+
+<tr>
+    <td> GPA</td>
+    <td><input type="range" onchange="showRangeVal()" max="4.0" min="0.0" step="1" id="rgGPA">
+        <span id="rgGPAval">1.0</span>
+    </td>
+
+</tr>
+        <tr>
+            <td><label>Brief essay about projects you've done:</label></td>
+            <td>
+                <textarea name="txtAreaProjEssay"  wrap="soft" cols="20" rows="10"> </textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td> <input type="submit" value="send"></td>
+            <td> <input type="reset" value="clear"></td>
+
+        </tr>
+
+    </table>
+    </fieldset>
+</form>
+
+
+</body>
+</html>
