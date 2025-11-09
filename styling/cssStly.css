@@ -1,1 +1,272 @@
-p{text-decoration: overline;}
+/* تعريف القيم الافتراضية (يمكنك تعديلها حسب تصميمك) */
+:root {
+    --menuBgColor: #ffffff;
+    --opacity: 0.9;
+    --border: #000000;
+    --itemsActive: #007bff;
+    --iconsColor: #333333;
+    --hamburger: #ffffff;
+    --hamburgerColor: #000000;
+    --primaryColor: #007bff;
+}
+
+/* النصوص بخط فوقي */
+p {
+    text-decoration: overline;
+}
+
+/* Navbar Dropdown */
+.navbar-dropdown {
+    background-color: var(--menuBgColor) !important;
+    padding: 0;
+}
+
+/* Navbar عامة */
+.navbar {
+    min-height: 70px;
+    padding: 10px 0;
+    transition: all 0.3s;
+    border-bottom-width: 0;
+}
+
+.navbar .dropdown-item {
+    padding: 0;
+    margin: 8px 0;
+}
+
+.navbar .navbar-logo img {
+    max-width: 62px;
+    min-height: 62px;
+    object-fit: contain;
+    border-radius: 100% !important;
+}
+
+.navbar .navbar-collapse {
+    justify-content: center;
+    z-index: 1;
+}
+
+.navbar.collapsed {
+    justify-content: center;
+}
+
+.navbar.collapsed .nav-item .nav-link::before {
+    display: none;
+}
+
+.navbar.collapsed ul.navbar-nav li {
+    margin: auto;
+}
+
+.navbar.collapsed .dropdown-menu .dropdown-item {
+    padding: 0.25rem 1.5rem;
+    text-align: left;
+}
+
+/* الشاشات الصغيرة */
+@media (max-width: 991px) {
+    .navbar {
+        min-height: 30px;
+    }
+
+    .nav-item {
+        padding: 0.5rem 0;
+    }
+
+    .navbar-collapse {
+        padding: 34px 0;
+        border-radius: 16px;
+        width: 100%;
+    }
+
+    .navbar-logo img {
+        height: 3rem !important;
+    }
+
+    .dropdown-menu {
+        padding: 6px 0 6px 15px;
+    }
+
+    .dropdown-menu .dropdown-item {
+        padding: 0 !important;
+        margin-top: 8px;
+        text-align: left;
+    }
+
+    .navbar-brand {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .icons-menu {
+        padding: 0;
+    }
+}
+
+/* Navbar قصيرة */
+.navbar.navbar-short {
+    min-height: 60px;
+}
+
+.navbar.navbar-short .navbar-logo img {
+    height: 2.5rem !important;
+}
+
+/* Menu Box */
+.menu_box {
+    flex-wrap: nowrap;
+}
+
+@media (max-width: 991px) {
+    .menu_box .navbar.opened,
+    .menu_box .navbar-collapse {
+        background-color: var(--menuBgColor) !important;
+        transition: none;
+    }
+}
+
+/* Sticky Navbar */
+nav.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* أيقونات */
+.icons-menu-main {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 150px;
+    margin-left: 24px;
+}
+
+@media (max-width: 991px) {
+    .icons-menu-main {
+        margin: 1rem 0 1rem 1rem;
+    }
+}
+
+/* الأزرار */
+.mbr-section-btn-main .btn {
+    margin: 8px;
+    min-width: 120px;
+    white-space: nowrap;
+}
+
+.nav-item {
+    margin: 4px 0;
+}
+
+@media (min-width: 992px) {
+    .nav-item {
+        margin: 4px 40px 4px 0;
+    }
+}
+
+.nav-item .nav-link {
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+    transition: all 0.3s ease-out;
+}
+
+.nav-item .nav-link:hover,
+.nav-item .nav-link:focus {
+    color: var(--itemsActive) !important;
+}
+
+/* Dropdown */
+.dropdown-menu {
+    border-radius: 0;
+    box-shadow: none;
+    text-align: left;
+    background-color: var(--menuBgColor);
+}
+
+@media (min-width: 992px) {
+    .dropdown-menu {
+        padding: 18px 34px 22px;
+        min-width: 250px;
+        left: -40px !important;
+    }
+}
+
+/* روابط */
+.nav-link,
+.dropdown-item {
+    color: #000000;
+}
+
+.navbar-caption {
+    color: #000000;
+}
+
+.navbar-caption:hover {
+    color: var(--primaryColor);
+}
+
+/* Hamburger Button */
+button.navbar-toggler {
+    outline: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--menuBgColor);
+    background: var(--hamburger);
+    position: relative;
+}
+
+.hamburger span {
+    position: absolute;
+    right: 10px;
+    margin-top: 14px;
+    width: 26px;
+    height: 2px;
+    background-color: var(--hamburgerColor);
+    transition: all 0.2s;
+}
+
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 8px; }
+.hamburger span:nth-child(3) { top: 8px; }
+.hamburger span:nth-child(4) { top: 16px; }
+
+nav.opened .hamburger span:nth-child(1),
+nav.opened .hamburger span:nth-child(4) {
+    width: 0;
+    opacity: 0;
+    right: 50%;
+}
+
+nav.opened .hamburger span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+nav.opened .hamburger span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+/* أيقونات عامة */
+.iconfont-wrapper {
+    color: var(--iconsColor);
+    font-size: 26px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.iconfont-wrapper:hover .mbr-iconfont {
+    opacity: 0.7;
+}
+
+/* النصوص */
+.text_widget a {
+    transition: all 0.3s ease-out;
+}
+
+.text_widget a:hover,
+.text_widget a:focus {
+     opacity: 0.8;
+}
