@@ -18,12 +18,26 @@
         function popupWindow(){
             window.open('form.html','form','width=350 , height=180');
         }
+
+        function parClicked(){
+            const clickedpatra=event.currentTarget;
+            clickedpatra.style.backgroundColor='red';
+        }
+
+        function init(){
+            let allparag=document.querySelectorAll("p");
+            for(const pr of allparag){
+                pr.addEventListener('click',parClicked,false);
+            }
+        }
+
+        window.onload=()=>{init();  }
     </script>
     <script src="script/t2.js"></script>
 </head>
 
-<body onload="alert('welcome')">
-
+<!--<body onload="init()">    == window.onload=()=>{init();-->
+<body>
 <script>
     document.write('hi from document write');
     document.write('<br>');
@@ -48,6 +62,40 @@
 <h2 id="h2">hi</h2>
 <input type="submit" onclick="showMS()">
 <button onclick="popupWindow()">popUp</button>
+<!--any bressed pragraph change color-->
+<p> some text for testing. some text for testing.some text for testing.
+    some text for testing.some text for testing.some text for testing.
+    some text for testing.some text for testing.some text for testing.
+    some text for testing.some text for testing.some text for testing.some text for testing.
 
+</p>
+
+<p> some text for testing. some text for testing.some text for testing.
+    some text for testing.some text for testing.some text for testing.
+    some text for testing.some text for testing.some text for testing.
+    some text for testing.some text for testing.some text for testing.some text for testing.
+
+</p>
+
+<p> some text for testing. some text for testing.some text for testing.
+    some text for testing.some text for testing.some text for testing.
+    some text for testing.some text for testing.some text for testing.
+    some text for testing.some text for testing.some text for testing.some text for testing.
+
+</p>
+
+<p> some text for testing. some text for testing.some text for testing.
+    some text for testing.some text for testing.some text for testing.
+    some text for testing.some text for testing.some text for testing.
+    some text for testing.some text for testing.some text for testing.some text for testing.
+
+</p>
+
+<p> some text for testing. some text for testing.some text for testing.
+    some text for testing.some text for testing.some text for testing.
+    some text for testing.some text for testing.some text for testing.
+    some text for testing.some text for testing.some text for testing.some text for testing.
+
+</p>
 </body>
 </html>
